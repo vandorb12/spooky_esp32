@@ -23,4 +23,4 @@ String wifi_names[] = {
     "Phantom Signals"
 };
 
-const int update_interval = 40000; // SSID Update interval, adjust as needed.
+const int update_interval = 120000; // SSID Update interval, adjust as needed.

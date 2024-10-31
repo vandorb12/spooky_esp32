@@ -2,6 +2,12 @@
 #include "ESPAsyncWebServer.h" //Can also be installed in the Arduino IDE Library https://github.com/me-no-dev/ESPAsyncWebServer
 #include "DNSServer.h"
 
+const IPAddress localIP(4, 3, 2, 1);       // the IP address the web server, Samsung requires the IP to be in public space
+const IPAddress gatewayIP(4, 3, 2, 1);       // IP address of the network should be the same as the local IP for captive portals
+const IPAddress subnetMask(255, 255, 255, 0);  // no need to change: https://avinetworks.com/glossary/subnet-mask/
+
+const String localIPURL = "http://4.3.2.1";  // a string version of the local IP with http, used for redirecting clients to your webpage
+
 AsyncWebServer server(80);
 DNSServer dnsServer;
 
